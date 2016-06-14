@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+        <title>Peopler Counter</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <h1 id="incoming"></h1>
+                <p id="timestamp">Incoming</p>
+            </center>
+            <center>
+                <h1 id="outgoing"></h1>
+                <p id="timestamp">outgoing</p>
+            </center>
+        </div>
+        <script type="text/javascript">
+            var incoming   = document.getElementById("incoming")
+            , outgoing   = document.getElementById("outgoing")
+            , socket     = io.connect("http://localhost:25000") // andress and port of your Node.js server.
+
+            socket.on('updateval', function (data) {
+                outgoing.innerHTML = data.out
+                incoming.innerHTML = data.in
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "People Counter",
+  "author": "cedricverst",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "socket.io": "0.9.13"
+  },
+  "engine": "node 0.8.x"
+}
