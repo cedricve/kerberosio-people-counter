@@ -21,7 +21,7 @@
         <script type="text/javascript">
             var incoming   = document.getElementById("incoming")
             , outgoing   = document.getElementById("outgoing")
-            , socket     = io.connect("http://localhost:25000") // andress and port of your Node.js server.
+            , socket     = io.connect(window.location.href) // andress and port of your Node.js server.
 
             socket.on('updateval', function (data) {
                 outgoing.innerHTML = data.out
